@@ -5,7 +5,6 @@ version="${mod_version}"
 displayName="${mod_name}"
 authors="RDShader"
 description='''
-Hello, I'm piggod ()
 '''
 [[mixins]]
 config="${mod_id}.mixins.json"

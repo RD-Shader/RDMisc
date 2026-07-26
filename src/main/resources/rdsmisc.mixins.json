@@ -3,6 +3,7 @@
   "package": "com.rdshader.misc.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BedExplodeMixin",
     "DropInventoryMixin"
   ],
   "injectors": {
@@ -10,5 +11,8 @@
   },
   "overwrites": {
     "requireAnnotations": true
-  }
+  },
+  "client": [
+    "accessor.BedRendererAccessor"
+  ]
 }

@@ -1,4 +1,14 @@
 {
+  "block.rdsmisc.double_bed": "！？床床？！",
+  "block.rdsmisc.eightfold_depressed_bed": "！？床缩压重八重压缩床？！",
+  "block.rdsmisc.fivefold_depressed_bed": "！？床缩压重五重压缩床？！",
+  "block.rdsmisc.fourfold_depressed_bed": "！？床缩压重四重压缩床？！",
+  "block.rdsmisc.quadruple_bed": "！？床床床床？！",
+  "block.rdsmisc.sevenfold_depressed_bed": "！？床缩压重七重压缩床？！",
+  "block.rdsmisc.sixfold_depressed_bed": "！？床缩压重六重压缩床？！",
+  "block.rdsmisc.triple_depressed_bed": "！？床缩压重三重压缩床？！",
   "gamerule.rdsmisc.drop_frequency": "掉落频率",
-  "gamerule.rdsmisc.drop_inventory": "不死亡掉落"
+  "gamerule.rdsmisc.drop_inventory": "不死亡掉落",
+  "gamerule.rdsmisc.random_explode": "主世界也要床床爆",
+  "itemGroup.rdsmisc.rdmisc_tab": "<RDMisc>"
 }

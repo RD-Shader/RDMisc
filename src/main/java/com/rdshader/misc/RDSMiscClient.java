@@ -1,12 +1,14 @@
 package com.rdshader.misc;
 
-import net.minecraft.client.Minecraft;
+import com.rdshader.misc.block.entity.ModBlockEntityTypes;
+import com.rdshader.misc.block.renderer.ModifiedBedRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -18,8 +20,12 @@ public class RDSMiscClient {
     }
 
     @SubscribeEvent
-    static void onClientSetup(FMLClientSetupEvent event) {
+    private static void onClientSetup(FMLClientSetupEvent event) {
         RDSMisc.LOGGER.info("RDShader Mod Started");
-        RDSMisc.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntityTypes.MODIFIED_BED.get(), ModifiedBedRenderer::new);
     }
 }

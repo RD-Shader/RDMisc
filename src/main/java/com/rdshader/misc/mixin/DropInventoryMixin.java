@@ -1,7 +1,7 @@
 package com.rdshader.misc.mixin;
 
 import com.mojang.authlib.GameProfile;
-import com.rdshader.misc.ModGameRules;
+import com.rdshader.misc.gamerule.ModGameRules;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
