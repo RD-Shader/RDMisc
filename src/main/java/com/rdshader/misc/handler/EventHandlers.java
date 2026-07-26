@@ -32,7 +32,7 @@ public class EventHandlers {
                             intensity = block.getIntensity();
                         }
                         ModifiedBedBlock.modifiedBedExplode(blockState, level, pos, intensity);
-                        }), 400, TimeUnit.MILLISECONDS);
+                        }), 250, TimeUnit.MILLISECONDS);
                 }
             }
         }
