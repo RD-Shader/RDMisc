@@ -26,7 +26,7 @@ public abstract class BedExplodeMixin extends HorizontalDirectionalBlock {
     public void useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult, CallbackInfoReturnable<InteractionResult> cir) {
         if (level instanceof ServerLevel serverLevel) {
             if (serverLevel.getGameRules().get(ModGameRules.RANDOM_EXPLODE.get())) {
-                if (level.random.nextInt(5) == 0) {
+                if (level.random.nextInt(10) == 0) {
                     ModifiedBedBlock.modifiedBedExplode(blockState, level, blockPos, 1);
                     cir.setReturnValue(InteractionResult.SUCCESS_SERVER);
                 }
