@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "rdsmisc:quadruple_bed",
+    "rdsmisc:quadruple_bed"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rdsmisc:triple_depressed_bed"
+  }
+}

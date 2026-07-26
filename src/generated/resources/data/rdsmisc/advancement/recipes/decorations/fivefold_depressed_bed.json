@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fourfold_depressed_bed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rdsmisc:fourfold_depressed_bed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rdsmisc:fivefold_depressed_bed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fourfold_depressed_bed"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rdsmisc:fivefold_depressed_bed"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rdsmisc:item/eightfold_depressed_bed"
+  }
+}

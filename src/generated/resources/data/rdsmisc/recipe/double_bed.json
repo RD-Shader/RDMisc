@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#minecraft:beds",
+    "#minecraft:beds",
+    "minecraft:crying_obsidian"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rdsmisc:double_bed"
+  }
+}

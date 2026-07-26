@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quadruple_bed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rdsmisc:quadruple_bed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rdsmisc:triple_depressed_bed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quadruple_bed"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rdsmisc:triple_depressed_bed"
+    ]
+  }
+}
