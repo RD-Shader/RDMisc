@@ -16,6 +16,7 @@ public class ModEnglishProvider extends LanguageProvider {
         add(ModGameRules.DROP_INVENTORY.get().getDescriptionId(), "Drop Inventory");
         add(ModGameRules.DROP_FREQUENCY.get().getDescriptionId(), "Drop Frequency");
         add(ModGameRules.RANDOM_EXPLODE.get().getDescriptionId(), "Bed Randomly Explodes");
+        add(ModGameRules.FURNACE_EXPLODE.get().getDescriptionId(), "Furnace Automatically Explodes");
 
         add(ModBlocks.DOUBLE_BED.get(), "Bed*2");
         add(ModBlocks.QUADRUPLE_BED.get(), "Bed*4");

@@ -4,7 +4,11 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BedExplodeMixin",
-    "DropInventoryMixin"
+    "CampfireExplodeMixin",
+    "DropInventoryMixin",
+    "FurnaceExplodeMixin",
+    "accessor.CampfireEntityAccessor",
+    "accessor.FurnaceEntityAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

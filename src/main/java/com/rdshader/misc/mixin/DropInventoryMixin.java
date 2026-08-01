@@ -1,6 +1,7 @@
 package com.rdshader.misc.mixin;
 
 import com.mojang.authlib.GameProfile;
+import com.rdshader.misc.RDSMiscUtil;
 import com.rdshader.misc.gamerule.ModGameRules;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,17 +30,17 @@ public abstract class DropInventoryMixin extends Player {
                 int frequency = serverLevel.getGameRules().get(ModGameRules.DROP_FREQUENCY.get());
 
                 if (inventory.isEmpty() && onGround()) {
-                    if (random.nextInt(50000 / frequency + 1) == 0) {
+                    if (RDSMiscUtil.requireRarity(random, 50000 / frequency)) {
                         addDeltaMovement(new Vec3(0, 4, 0));
                         hurtMarked = true;
                     }
                 }
                 else {
                     ItemStack target = ItemStack.EMPTY;
-                    if (random.nextInt(5000 / frequency + 1) == 0) {
+                    if (RDSMiscUtil.requireRarity(random, 5000 / frequency)) {
                         target = inventory.getSelectedItem();
                     }
-                    else if (random.nextInt(300 / frequency + 1) == 0) {
+                    else if (RDSMiscUtil.requireRarity(random, 300 / frequency)) {
                         target = inventory.getItem(random.nextInt(inventory.getMaxStackSize()));
                     }
 

@@ -16,6 +16,7 @@ public class ModChineseProvider extends LanguageProvider {
         add(ModGameRules.DROP_INVENTORY.get().getDescriptionId(), "不死亡掉落");
         add(ModGameRules.DROP_FREQUENCY.get().getDescriptionId(), "掉落频率");
         add(ModGameRules.RANDOM_EXPLODE.get().getDescriptionId(), "主世界也要床床爆");
+        add(ModGameRules.FURNACE_EXPLODE.get().getDescriptionId(), "熔炉自爆");
 
         add(ModBlocks.DOUBLE_BED.get(), "！？床床？！");
         add(ModBlocks.QUADRUPLE_BED.get(), "！？床床床床？！");

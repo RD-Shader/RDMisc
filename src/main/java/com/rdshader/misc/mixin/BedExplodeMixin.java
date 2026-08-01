@@ -1,5 +1,6 @@
 package com.rdshader.misc.mixin;
 
+import com.rdshader.misc.RDSMiscUtil;
 import com.rdshader.misc.block.ModifiedBedBlock;
 import com.rdshader.misc.gamerule.ModGameRules;
 import net.minecraft.core.BlockPos;
@@ -26,7 +27,7 @@ public abstract class BedExplodeMixin extends HorizontalDirectionalBlock {
     public void useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult, CallbackInfoReturnable<InteractionResult> cir) {
         if (level instanceof ServerLevel serverLevel) {
             if (serverLevel.getGameRules().get(ModGameRules.RANDOM_EXPLODE.get())) {
-                if (level.random.nextInt(10) == 0) {
+                if (RDSMiscUtil.requireProbability(level.random, 0.1)) {
                     ModifiedBedBlock.modifiedBedExplode(blockState, level, blockPos, 1);
                     cir.setReturnValue(InteractionResult.SUCCESS_SERVER);
                 }
