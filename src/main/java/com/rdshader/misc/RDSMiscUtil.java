@@ -15,7 +15,7 @@ public class RDSMiscUtil {
     
     public static boolean requireProbability(RandomSource random, double probability) {
         if (probability > 1) {
-            throw new IllegalArgumentException("Probability exceeds 1: probability=" + probability);
+            return true;
         }
         return requireRarity(random, (int) Math.round(1 / probability));
     }
