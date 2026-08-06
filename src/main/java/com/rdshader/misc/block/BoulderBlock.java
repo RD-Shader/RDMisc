@@ -60,10 +60,12 @@ public class BoulderBlock extends ColoredFallingBlock {
                     for (int x = -1; x <= 1; x++) {
                         for (int y = -1; y <= 1; y++) {
                             for (int z = -1; z <= 1; z++) {
-                                BlockPos relativePos = startPos.offset(x, y, z);
-                                BlockState relativeState = level.getBlockState(relativePos);
-                                if (!processedPositions.contains(relativePos) && relativeState.is(ModBlockTags.BOULDERS)) {
-                                    toProcessPositions.add(relativePos);
+                                if (x != 0 && y != 0 && z != 0) {
+                                    BlockPos relativePos = startPos.offset(x, y, z);
+                                    BlockState relativeState = level.getBlockState(relativePos);
+                                    if (!processedPositions.contains(relativePos) && relativeState.is(ModBlockTags.BOULDERS)) {
+                                        toProcessPositions.add(relativePos);
+                                    }
                                 }
                             }
                         }
