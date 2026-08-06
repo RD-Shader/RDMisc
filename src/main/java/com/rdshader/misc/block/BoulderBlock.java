@@ -33,7 +33,7 @@ public class BoulderBlock extends ColoredFallingBlock {
 
     @Override
     protected void falling(@NonNull FallingBlockEntity entity) {
-        entity.setHurtsEntities(6, 1000);
+        entity.setHurtsEntities(damage, 1000);
     }
 
     @Override
