@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_overworld",
+  "features": [
+    "rdsmisc:gravel_boulder",
+    "rdsmisc:boulder",
+    "rdsmisc:deepslate_boulder"
+  ],
+  "step": "underground_ores"
+}
