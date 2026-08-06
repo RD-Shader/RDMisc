@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:desert",
+  "features": [
+    "rdsmisc:sand_boulder"
+  ],
+  "step": "underground_ores"
+}

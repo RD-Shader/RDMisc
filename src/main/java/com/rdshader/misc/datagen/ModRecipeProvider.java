@@ -4,10 +4,7 @@ import com.rdshader.misc.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import org.jspecify.annotations.NonNull;
@@ -21,6 +18,23 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        ShapedRecipeBuilder.shaped(registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, ModItems.GRAVEL_BOULDER)
+                .pattern("XXX").pattern("XXX").pattern("XXX")
+                .define('X', Items.GRAVEL).unlockedBy("has_gravel", has(Items.GRAVEL))
+                .save(output);
+        ShapedRecipeBuilder.shaped(registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, ModItems.BOULDER)
+                .pattern("XXX").pattern("XXX").pattern("XXX")
+                .define('X', Items.STONE).unlockedBy("has_stone", has(Items.STONE))
+                .save(output);
+        ShapedRecipeBuilder.shaped(registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, ModItems.DEEPSLATE_BOULDER)
+                .pattern("XXX").pattern("XXX").pattern("XXX")
+                .define('X', Items.DEEPSLATE).unlockedBy("has_deepslate", has(Items.DEEPSLATE))
+                .save(output);
+        ShapedRecipeBuilder.shaped(registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, ModItems.SAND_BOULDER)
+                .pattern("XXX").pattern("XXX").pattern("XXX")
+                .define('X', Items.SAND).unlockedBy("has_sand", has(Items.SAND))
+                .save(output);
+
         ShapelessRecipeBuilder.shapeless(registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, ModItems.DOUBLE_BED)
                 .requires(ItemTags.BEDS).requires(ItemTags.BEDS).requires(Items.CRYING_OBSIDIAN)
                 .unlockedBy("has_bed", has(ItemTags.BEDS))

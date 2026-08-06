@@ -17,6 +17,11 @@ public class ModModelProvider extends ModelProvider {
     }
 
     private void registerBlockModels(BlockModelGenerators blockModels) {
+        blockModels.createTrivialCube(ModBlocks.GRAVEL_BOULDER.get());
+        blockModels.createTrivialCube(ModBlocks.BOULDER.get());
+        blockModels.createTrivialCube(ModBlocks.DEEPSLATE_BOULDER.get());
+        blockModels.createTrivialCube(ModBlocks.SAND_BOULDER.get());
+
         createModifiedBed(blockModels, ModBlocks.DOUBLE_BED.get());
         createModifiedBed(blockModels, ModBlocks.QUADRUPLE_BED.get());
         createModifiedBed(blockModels, ModBlocks.TRIPLE_DEPRESSED_BED.get());
@@ -27,7 +32,7 @@ public class ModModelProvider extends ModelProvider {
         createModifiedBed(blockModels, ModBlocks.EIGHT_FOLD_DEPRESSED_BED.get());
     }
 
-    private void registerItemModels(ItemModelGenerators ignoredItemModels) {
+    private void registerItemModels(ItemModelGenerators itemModels) {
     }
 
     @SuppressWarnings("deprecation")

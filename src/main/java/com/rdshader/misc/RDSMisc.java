@@ -3,13 +3,13 @@ package com.rdshader.misc;
 import com.mojang.logging.LogUtils;
 import com.rdshader.misc.block.ModBlocks;
 import com.rdshader.misc.block.entity.ModBlockEntityTypes;
-import com.rdshader.misc.datagen.ModChineseProvider;
-import com.rdshader.misc.datagen.ModEnglishProvider;
-import com.rdshader.misc.datagen.ModModelProvider;
-import com.rdshader.misc.datagen.ModRecipeProvider;
+import com.rdshader.misc.datagen.*;
+import com.rdshader.misc.datagen.worldgen.ModConfiguredFeatures;
+import com.rdshader.misc.datagen.worldgen.ModPlacedFeatures;
 import com.rdshader.misc.gamerule.ModGameRules;
 import com.rdshader.misc.item.ModItems;
 import com.rdshader.misc.item.ModTabs;
+import net.minecraft.core.RegistrySetBuilder;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 public class RDSMisc {
     public static final String MODID = "rdsmisc";
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static RegistrySetBuilder BUILDER = new RegistrySetBuilder();
 
     public RDSMisc(IEventBus modEventBus, ModContainer modContainer) {
         generalRegister(modEventBus);
@@ -43,8 +44,14 @@ public class RDSMisc {
     private void gatherData(GatherDataEvent.Client event) {
         event.createProvider(ModModelProvider::new);
         event.createProvider(ModRecipeProvider.Runner::new);
+        event.createProvider(ModBlockTags::new);
         event.createProvider(ModEnglishProvider::new);
         event.createProvider(ModChineseProvider::new);
+
+        ModConfiguredFeatures.submitConfiguredFeatures();
+        ModPlacedFeatures.submitPlacedFeatures();
+
+        event.createDatapackRegistryObjects(BUILDER);
     }
 
     private void addEvents(IEventBus modEventBus) {

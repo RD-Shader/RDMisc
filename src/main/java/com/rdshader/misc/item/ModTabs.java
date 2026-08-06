@@ -27,6 +27,10 @@ public class ModTabs {
                 output.accept(ModItems.SIX_FOLD_DEPRESSED_BED.get());
                 output.accept(ModItems.SEVEN_FOLD_DEPRESSED_BED.get());
                 output.accept(ModItems.EIGHT_FOLD_DEPRESSED_BED.get());
+                output.accept(ModItems.GRAVEL_BOULDER.get());
+                output.accept(ModItems.BOULDER.get());
+                output.accept(ModItems.DEEPSLATE_BOULDER.get());
+                output.accept(ModItems.SAND_BOULDER.get());
             })
             .build()
     );

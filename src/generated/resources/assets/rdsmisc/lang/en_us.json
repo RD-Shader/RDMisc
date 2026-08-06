@@ -1,14 +1,19 @@
 {
+  "block.rdsmisc.boulder": "Boulder",
+  "block.rdsmisc.deepslate_boulder": "Deepslate Boulder",
   "block.rdsmisc.double_bed": "Bed*2",
   "block.rdsmisc.eightfold_depressed_bed": "Eightfold Depressed Bed",
   "block.rdsmisc.fivefold_depressed_bed": "Fivefold Depressed Bed",
   "block.rdsmisc.fourfold_depressed_bed": "Fourfold Depressed Bed",
+  "block.rdsmisc.gravel_boulder": "Gravel Boulder",
   "block.rdsmisc.quadruple_bed": "Bed*4",
+  "block.rdsmisc.sand_boulder": "Sand Boulder",
   "block.rdsmisc.sevenfold_depressed_bed": "Sevenfold Depressed Bed",
   "block.rdsmisc.sixfold_depressed_bed": "Sixfold Depressed Bed",
   "block.rdsmisc.triple_depressed_bed": "Triple Depressed Bed",
   "gamerule.rdsmisc.drop_frequency": "Drop Frequency",
   "gamerule.rdsmisc.drop_inventory": "Drop Inventory",
+  "gamerule.rdsmisc.furnace_explode": "Furnace Automatically Explodes",
   "gamerule.rdsmisc.random_explode": "Bed Randomly Explodes",
   "itemGroup.rdsmisc.rdmisc_tab": "RDMisc"
 }

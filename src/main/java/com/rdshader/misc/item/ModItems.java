@@ -24,6 +24,11 @@ public class ModItems {
     public static final DeferredItem<BlockItem> SEVEN_FOLD_DEPRESSED_BED = registerBed(ModifiedBedType.SEVENFOLD_DEPRESSED, ModBlocks.SEVEN_FOLD_DEPRESSED_BED);
     public static final DeferredItem<BlockItem> EIGHT_FOLD_DEPRESSED_BED = registerBed(ModifiedBedType.EIGHTFOLD_DEPRESSED, ModBlocks.EIGHT_FOLD_DEPRESSED_BED);
 
+    public static final DeferredItem<BlockItem> GRAVEL_BOULDER = ITEMS.registerSimpleBlockItem("gravel_boulder", ModBlocks.GRAVEL_BOULDER);
+    public static final DeferredItem<BlockItem> BOULDER = ITEMS.registerSimpleBlockItem("boulder", ModBlocks.BOULDER);
+    public static final DeferredItem<BlockItem> DEEPSLATE_BOULDER = ITEMS.registerSimpleBlockItem("deepslate_boulder", ModBlocks.DEEPSLATE_BOULDER);
+    public static final DeferredItem<BlockItem> SAND_BOULDER = ITEMS.registerSimpleBlockItem("sand_boulder", ModBlocks.SAND_BOULDER);
+
     private static DeferredItem<BlockItem> registerBed(ModifiedBedType type, DeferredBlock<ModifiedBedBlock> block) {
         return ITEMS.registerItem(type.getId() + "_bed", props -> new BedItem(block.get(), props), (() -> (new Item.Properties().stacksTo(1)).useBlockDescriptionPrefix()));
     }

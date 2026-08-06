@@ -27,6 +27,11 @@ public class ModEnglishProvider extends LanguageProvider {
         add(ModBlocks.SEVEN_FOLD_DEPRESSED_BED.get(), "Sevenfold Depressed Bed");
         add(ModBlocks.EIGHT_FOLD_DEPRESSED_BED.get(), "Eightfold Depressed Bed");
 
+        add(ModBlocks.GRAVEL_BOULDER.get(), "Gravel Boulder");
+        add(ModBlocks.BOULDER.get(), "Boulder");
+        add(ModBlocks.DEEPSLATE_BOULDER.get(), "Deepslate Boulder");
+        add(ModBlocks.SAND_BOULDER.get(), "Sand Boulder");
+
         add("itemGroup." + RDSMisc.MODID + ".rdmisc_tab", "RDMisc");
     }
 }

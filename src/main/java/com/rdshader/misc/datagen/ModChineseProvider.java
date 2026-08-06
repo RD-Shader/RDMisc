@@ -27,6 +27,11 @@ public class ModChineseProvider extends LanguageProvider {
         add(ModBlocks.SEVEN_FOLD_DEPRESSED_BED.get(), "！？床缩压重七重压缩床？！");
         add(ModBlocks.EIGHT_FOLD_DEPRESSED_BED.get(), "！？床缩压重八重压缩床？！");
 
+        add(ModBlocks.GRAVEL_BOULDER.get(), "沙砾巨石");
+        add(ModBlocks.BOULDER.get(), "正版巨石");
+        add(ModBlocks.DEEPSLATE_BOULDER.get(), "深板岩巨石");
+        add(ModBlocks.SAND_BOULDER.get(), "沙子巨石");
+
         add("itemGroup." + RDSMisc.MODID + ".rdmisc_tab", "<RDMisc>");
     }
 }
