@@ -46,32 +46,32 @@ public class BoulderBlock extends ColoredFallingBlock {
 
     @Override
     public void affectNeighborsAfterRemoval(@NonNull BlockState startState, @NonNull ServerLevel level, @NonNull BlockPos startPos, boolean movedByPiston) {
-        Set<BlockPos> processedPositions = new HashSet<>();
-        Queue<BlockPos> toProcessPositions = new ArrayDeque<>();
-        toProcessPositions.add(startPos);
+        Set<BlockPos> toProcessPositions = new HashSet<>();
+        Queue<BlockPos> queue = new ArrayDeque<>();
+        queue.add(startPos);
 
-        if (startState.is(ModBlockTags.BOULDERS)) {
-            while (!toProcessPositions.isEmpty()) {
-                BlockPos pos = toProcessPositions.poll();
+        while (!queue.isEmpty()) {
+            BlockPos pos = queue.poll();
 
-                if (processedPositions.add(pos)) {
-                    if (level.destroyBlock(pos, false)) {
-                        for (int x = -1; x <= 1; x++) {
-                            for (int y = -1; y <= 1; y++) {
-                                for (int z = -1; z <= 1; z++) {
-                                    if (x != 0 || y != 0 || z != 0) {
-                                        BlockPos relativePos = startPos.offset(x, y, z);
-                                        BlockState relativeState = level.getBlockState(relativePos);
-                                        if (!processedPositions.contains(relativePos) && relativeState.is(ModBlockTags.BOULDERS)) {
-                                            toProcessPositions.add(relativePos);
-                                        }
-                                    }
+            if (toProcessPositions.add(pos)) {
+                for (int x = -1; x <= 1; x++) {
+                    for (int y = -1; y <= 1; y++) {
+                        for (int z = -1; z <= 1; z++) {
+                            if (!(x == 0 && y == 0 && z == 0)) {
+                                BlockPos relativePos = pos.offset(x, y, z);
+                                BlockState relativeState = level.getBlockState(relativePos);
+                                if (!toProcessPositions.contains(relativePos) && relativeState.is(ModBlockTags.BOULDERS)) {
+                                    queue.add(relativePos);
                                 }
                             }
                         }
                     }
                 }
             }
+        }
+
+        for (BlockPos pos: toProcessPositions) {
+            level.destroyBlock(pos, false);
         }
     }
 
