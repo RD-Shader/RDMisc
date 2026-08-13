@@ -9,6 +9,7 @@ import com.rdshader.misc.datagen.worldgen.ModPlacedFeatures;
 import com.rdshader.misc.gamerule.ModGameRules;
 import com.rdshader.misc.item.ModItems;
 import com.rdshader.misc.item.ModTabs;
+import com.rdshader.misc.network.PayloadRegistry;
 import net.minecraft.core.RegistrySetBuilder;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -56,6 +57,7 @@ public class RDSMisc {
 
     private void addEvents(IEventBus modEventBus) {
         modEventBus.addListener(this::gatherData);
+        modEventBus.addListener(PayloadRegistry::registerPayloads);
     }
 
     @SubscribeEvent

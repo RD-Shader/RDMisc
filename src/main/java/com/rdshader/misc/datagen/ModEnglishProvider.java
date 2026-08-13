@@ -3,6 +3,7 @@ package com.rdshader.misc.datagen;
 import com.rdshader.misc.RDSMisc;
 import com.rdshader.misc.block.ModBlocks;
 import com.rdshader.misc.gamerule.ModGameRules;
+import com.rdshader.misc.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -31,6 +32,16 @@ public class ModEnglishProvider extends LanguageProvider {
         add(ModBlocks.BOULDER.get(), "Boulder");
         add(ModBlocks.DEEPSLATE_BOULDER.get(), "Deepslate Boulder");
         add(ModBlocks.SAND_BOULDER.get(), "Sand Boulder");
+
+        add(ModItems.TASK_MANAGER.get(), "taskmgr.exe");
+
+        add(RDSMisc.MODID + ".gui.TaskManagerScreen", "Task Manager");
+        add(RDSMisc.MODID + ".gui.copy_position", "Copy Position (C)");
+        add(RDSMisc.MODID + ".gui.copy_uuid", "Copy UUID (C)");
+        add(RDSMisc.MODID + ".gui.teleport", "Teleport (T)");
+        add(RDSMisc.MODID + ".gui.terminate", "Terminate (E)");
+        add(RDSMisc.MODID + ".gui.terminate_all", "Terminate All Selected (E)");
+        add(RDSMisc.MODID + ".gui.entity_count", "%d in total");
 
         add("itemGroup." + RDSMisc.MODID + ".rdmisc_tab", "RDMisc");
     }

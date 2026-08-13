@@ -2,11 +2,13 @@ package com.rdshader.misc.datagen;
 
 import com.rdshader.misc.RDSMisc;
 import com.rdshader.misc.block.ModBlocks;
+import com.rdshader.misc.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
+import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import org.jspecify.annotations.NonNull;
@@ -33,6 +35,7 @@ public class ModModelProvider extends ModelProvider {
     }
 
     private void registerItemModels(ItemModelGenerators itemModels) {
+        itemModels.generateFlatItem(ModItems.TASK_MANAGER.get(), ModelTemplates.FLAT_ITEM);
     }
 
     @SuppressWarnings("deprecation")

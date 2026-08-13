@@ -11,6 +11,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.client.network.event.RegisterClientPayloadHandlersEvent;
 
 @Mod(value = RDSMisc.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = RDSMisc.MODID, value = Dist.CLIENT)
@@ -22,6 +23,10 @@ public class RDSMiscClient {
     @SubscribeEvent
     private static void onClientSetup(FMLClientSetupEvent event) {
         RDSMisc.LOGGER.info("RDShader Mod Started");
+    }
+
+    @SubscribeEvent
+    public static void onRegisterClientPackets(RegisterClientPayloadHandlersEvent event) {
     }
 
     @SubscribeEvent

@@ -15,5 +15,13 @@
   "gamerule.rdsmisc.drop_inventory": "不死亡掉落",
   "gamerule.rdsmisc.furnace_explode": "熔炉自爆",
   "gamerule.rdsmisc.random_explode": "主世界也要床床爆",
-  "itemGroup.rdsmisc.rdmisc_tab": "<RDMisc>"
+  "item.rdsmisc.taskmgr": "任务管理器",
+  "itemGroup.rdsmisc.rdmisc_tab": "<RDMisc>",
+  "rdsmisc.gui.TaskManagerScreen": "任务管理器",
+  "rdsmisc.gui.copy_position": "复制坐标 (C)",
+  "rdsmisc.gui.copy_uuid": "复制UUID (C)",
+  "rdsmisc.gui.entity_count": "共有 %d 项",
+  "rdsmisc.gui.teleport": "传送 (T)",
+  "rdsmisc.gui.terminate": "结束任务 (E)",
+  "rdsmisc.gui.terminate_all": "结束所有任务 (E)"
 }

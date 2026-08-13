@@ -3,6 +3,7 @@ package com.rdshader.misc.datagen;
 import com.rdshader.misc.block.ModBlocks;
 import com.rdshader.misc.gamerule.ModGameRules;
 import com.rdshader.misc.RDSMisc;
+import com.rdshader.misc.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -31,6 +32,16 @@ public class ModChineseProvider extends LanguageProvider {
         add(ModBlocks.BOULDER.get(), "正版巨石");
         add(ModBlocks.DEEPSLATE_BOULDER.get(), "深板岩巨石");
         add(ModBlocks.SAND_BOULDER.get(), "沙子巨石");
+
+        add(ModItems.TASK_MANAGER.get(), "任务管理器");
+
+        add(RDSMisc.MODID + ".gui.TaskManagerScreen", "任务管理器");
+        add(RDSMisc.MODID + ".gui.copy_position", "复制坐标 (C)");
+        add(RDSMisc.MODID + ".gui.copy_uuid", "复制UUID (C)");
+        add(RDSMisc.MODID + ".gui.teleport", "传送 (T)");
+        add(RDSMisc.MODID + ".gui.terminate", "结束任务 (E)");
+        add(RDSMisc.MODID + ".gui.terminate_all", "结束所有任务 (E)");
+        add(RDSMisc.MODID + ".gui.entity_count", "共有 %d 项");
 
         add("itemGroup." + RDSMisc.MODID + ".rdmisc_tab", "<RDMisc>");
     }

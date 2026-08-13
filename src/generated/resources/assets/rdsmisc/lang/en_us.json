@@ -15,5 +15,13 @@
   "gamerule.rdsmisc.drop_inventory": "Drop Inventory",
   "gamerule.rdsmisc.furnace_explode": "Furnace Automatically Explodes",
   "gamerule.rdsmisc.random_explode": "Bed Randomly Explodes",
-  "itemGroup.rdsmisc.rdmisc_tab": "RDMisc"
+  "item.rdsmisc.taskmgr": "taskmgr.exe",
+  "itemGroup.rdsmisc.rdmisc_tab": "RDMisc",
+  "rdsmisc.gui.TaskManagerScreen": "Task Manager",
+  "rdsmisc.gui.copy_position": "Copy Position (C)",
+  "rdsmisc.gui.copy_uuid": "Copy UUID (C)",
+  "rdsmisc.gui.entity_count": "%d in total",
+  "rdsmisc.gui.teleport": "Teleport (T)",
+  "rdsmisc.gui.terminate": "Terminate (E)",
+  "rdsmisc.gui.terminate_all": "Terminate All Selected (E)"
 }

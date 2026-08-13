@@ -29,6 +29,8 @@ public class ModItems {
     public static final DeferredItem<BlockItem> DEEPSLATE_BOULDER = ITEMS.registerSimpleBlockItem("deepslate_boulder", ModBlocks.DEEPSLATE_BOULDER);
     public static final DeferredItem<BlockItem> SAND_BOULDER = ITEMS.registerSimpleBlockItem("sand_boulder", ModBlocks.SAND_BOULDER);
 
+    public static final DeferredItem<Item> TASK_MANAGER = ITEMS.registerItem("taskmgr", TaskManagerItem::new, p -> p.stacksTo(1));
+
     private static DeferredItem<BlockItem> registerBed(ModifiedBedType type, DeferredBlock<ModifiedBedBlock> block) {
         return ITEMS.registerItem(type.getId() + "_bed", props -> new BedItem(block.get(), props), (() -> (new Item.Properties().stacksTo(1)).useBlockDescriptionPrefix()));
     }
