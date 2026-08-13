@@ -76,6 +76,7 @@ public class TaskManagerScreen extends Screen {
         ClientPacketDistributor.sendToServer(RequestEntitiesPacket.INSTANCE);
 
         list = new TaskList(minecraft);
+        addWidget(list);
 
         headerLayout.addChild(searchBox);
         addButtons();
@@ -111,6 +112,7 @@ public class TaskManagerScreen extends Screen {
             List<EntityData> newList = List.of();
             if (text.contains("-")) {
                 newList = searchBy(data -> data.uuid().equals(text));
+                list.setScrollAmount(0);
             }
             else {
                 Matcher matcher = Pattern.compile("\\bd([<>])(\\d+)(\\.\\d*)?\\b").matcher(text);
@@ -170,9 +172,7 @@ public class TaskManagerScreen extends Screen {
     }
 
     public void refresh() {
-        removeWidget(list);
         list.clearEntries();
-        addWidget(list);
         for (EntityData entityData : shownList) {
             list.addEntry(new TaskEntry(entityData));
         }
@@ -209,7 +209,7 @@ public class TaskManagerScreen extends Screen {
     public class TaskList extends ObjectSelectionList<TaskEntry> {
         public TaskList(Minecraft mc) {
             super(mc, TaskManagerScreen.this.width, fullLayout.getContentHeight(), 45, 23);
-            setY(getY() - 16);
+            setY(29);
         }
 
         @Override
