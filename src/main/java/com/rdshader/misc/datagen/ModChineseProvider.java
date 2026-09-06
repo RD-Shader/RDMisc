@@ -34,6 +34,8 @@ public class ModChineseProvider extends LanguageProvider {
         add(ModBlocks.SAND_BOULDER.get(), "沙子巨石");
 
         add(ModItems.TASK_MANAGER.get(), "任务管理器");
+        add(ModItems.DIRECTORY.get(), "新建文件夹");
+        add(ModItems.EXPLORER.get(), "文件资源管理器");
 
         add(RDSMisc.MODID + ".gui.TaskManagerScreen", "任务管理器");
         add(RDSMisc.MODID + ".gui.copy_position", "复制坐标 (C)");

@@ -15,6 +15,8 @@
   "gamerule.rdsmisc.drop_inventory": "不死亡掉落",
   "gamerule.rdsmisc.furnace_explode": "熔炉自爆",
   "gamerule.rdsmisc.random_explode": "主世界也要床床爆",
+  "item.rdsmisc.directory": "新建文件夹",
+  "item.rdsmisc.explorer": "文件资源管理器",
   "item.rdsmisc.taskmgr": "任务管理器",
   "itemGroup.rdsmisc.rdmisc_tab": "<RDMisc>",
   "rdsmisc.gui.TaskManagerScreen": "任务管理器",

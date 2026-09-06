@@ -31,7 +31,9 @@ public class ModTabs {
                 output.accept(ModItems.BOULDER.get());
                 output.accept(ModItems.DEEPSLATE_BOULDER.get());
                 output.accept(ModItems.SAND_BOULDER.get());
-                output.accept(ModItems.TASK_MANAGER);
+                output.accept(ModItems.TASK_MANAGER.get());
+                output.accept(ModItems.DIRECTORY.get());
+                output.accept(ModItems.EXPLORER.get());
             })
             .build()
     );

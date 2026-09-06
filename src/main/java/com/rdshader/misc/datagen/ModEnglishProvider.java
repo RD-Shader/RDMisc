@@ -34,6 +34,8 @@ public class ModEnglishProvider extends LanguageProvider {
         add(ModBlocks.SAND_BOULDER.get(), "Sand Boulder");
 
         add(ModItems.TASK_MANAGER.get(), "taskmgr.exe");
+        add(ModItems.DIRECTORY.get(), "New Folder");
+        add(ModItems.EXPLORER.get(), "explorer.exe");
 
         add(RDSMisc.MODID + ".gui.TaskManagerScreen", "Task Manager");
         add(RDSMisc.MODID + ".gui.copy_position", "Copy Position (C)");

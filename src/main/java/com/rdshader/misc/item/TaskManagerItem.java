@@ -19,7 +19,6 @@ public class TaskManagerItem extends Item {
         if (level.isClientSide()) {
             Minecraft.getInstance().setScreen(new TaskManagerScreen());
         }
-
         return InteractionResult.SUCCESS;
     }
 }

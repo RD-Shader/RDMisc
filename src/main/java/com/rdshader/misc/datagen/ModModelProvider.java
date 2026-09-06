@@ -36,6 +36,8 @@ public class ModModelProvider extends ModelProvider {
 
     private void registerItemModels(ItemModelGenerators itemModels) {
         itemModels.generateFlatItem(ModItems.TASK_MANAGER.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.DIRECTORY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.EXPLORER.get(), ModelTemplates.FLAT_ITEM);
     }
 
     @SuppressWarnings("deprecation")

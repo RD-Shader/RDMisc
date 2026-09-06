@@ -45,13 +45,13 @@ public class TaskManagerScreen extends Screen {
     private boolean doRefresh = true;
     public List<EntityData> dataList;
     public List<EntityData> shownList;
-    public TaskList list;
-    public EditBox searchBox = new EditBox(font, 400, 20, Component.translatable("fml.menu.mods.search"));
+    public TaskList LIST;
+    public final EditBox SEARCH_BOX = new EditBox(font, 400, 20, Component.translatable("fml.menu.mods.search"));
 
     private final Button COPY = new CopyButton(0, 0, 100, 20, Component.translatable("rdsmisc.gui.copy_position"));
 
     private final Button TELEPORT = new Button.Builder(Component.translatable("rdsmisc.gui.teleport"), b -> {
-        TaskEntry entry = list.getSelected();
+        TaskEntry entry = LIST.getSelected();
         if (entry != null) {
             ClientPacketDistributor.sendToServer(new RequestTeleportPacket(entry.data));
             if (minecraft.player != null) {
@@ -75,10 +75,10 @@ public class TaskManagerScreen extends Screen {
     protected void init() {
         ClientPacketDistributor.sendToServer(RequestEntitiesPacket.INSTANCE);
 
-        list = new TaskList(minecraft);
-        addWidget(list);
+        LIST = new TaskList(minecraft);
+        addWidget(LIST);
 
-        headerLayout.addChild(searchBox);
+        headerLayout.addChild(SEARCH_BOX);
         addButtons();
 
         fullLayout.visitWidgets(this::addRenderableWidget);
@@ -90,9 +90,9 @@ public class TaskManagerScreen extends Screen {
         footerLayout.visitWidgets(this::addRenderableWidget);
         footerLayout.arrangeElements();
 
-        searchBox.setResponder(this::inputResponder);
+        SEARCH_BOX.setResponder(this::inputResponder);
 
-        searchBox.setMaxLength(100);
+        SEARCH_BOX.setMaxLength(100);
     }
 
     @Override
@@ -100,14 +100,14 @@ public class TaskManagerScreen extends Screen {
         ticks++;
         if (ticks == 40) {
             ticks = 0;
-            if (list.getSelected() == null && doRefresh) {
+            if (LIST.getSelected() == null && doRefresh) {
                 ClientPacketDistributor.sendToServer(RequestEntitiesPacket.INSTANCE);
             }
         }
     }
 
     private void inputResponder(String text) {
-        list.setFocused(false);
+        LIST.setFocused(false);
         if (!text.isEmpty()) {
             List<EntityData> newList = List.of();
             if (text.contains("-")) {
@@ -132,7 +132,7 @@ public class TaskManagerScreen extends Screen {
             }
 
             if (!newList.isEmpty()) {
-                list.setScrollAmount(0);
+                LIST.setScrollAmount(0);
                 shownList = newList;
                 refresh();
                 doRefresh = false;
@@ -172,16 +172,16 @@ public class TaskManagerScreen extends Screen {
     }
 
     public void refresh() {
-        list.clearEntries();
+        LIST.clearEntries();
         for (EntityData entityData : shownList) {
-            list.addEntry(new TaskEntry(entityData));
+            LIST.addEntry(new TaskEntry(entityData));
         }
     }
 
     @Override
     public void render(@NonNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-        guiGraphics.drawString(minecraft.font, Component.translatable("rdsmisc.gui.entity_count", list.size()), 0, 30, -1);
-        list.render(guiGraphics, mouseX, mouseY, partialTick);
+        guiGraphics.drawString(minecraft.font, Component.translatable("rdsmisc.gui.entity_count", LIST.size()), 0, 30, -1);
+        LIST.render(guiGraphics, mouseX, mouseY, partialTick);
         super.render(guiGraphics, mouseX, mouseY, partialTick);
     }
 
@@ -326,7 +326,7 @@ public class TaskManagerScreen extends Screen {
 
         @Override
         public void onPress(@NonNull InputWithModifiers i) {
-            TaskEntry entry = list.getSelected();
+            TaskEntry entry = LIST.getSelected();
             if (entry != null) {
                 if (terminateUnique) {
                     ClientPacketDistributor.sendToServer(new RequestKillPacket(entry.data.uuid()));
@@ -387,7 +387,7 @@ public class TaskManagerScreen extends Screen {
 
         @Override
         public void onPress(@NonNull InputWithModifiers i) {
-            TaskEntry entry = list.getSelected();
+            TaskEntry entry = LIST.getSelected();
             if (entry != null) {
                 if (copyPosition) {
                     minecraft.keyboardHandler.setClipboard(String.format("%f %f %f", entry.data.x(), entry.data.y(), entry.data.z()));
