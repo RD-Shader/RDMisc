@@ -14,5 +14,9 @@ public class PayloadRegistry {
         registrar.playToServer(RequestTeleportPacket.TYPE, RequestTeleportPacket.STREAM_CODEC, RequestTeleportPacket::toServer);
 
         registrar.playToClient(ResponseEntitiesPacket.TYPE, ResponseEntitiesPacket.STREAM_CODEC, ResponseEntitiesPacket::toClient);
+
+        registrar.playToServer(RequestPlayersPacket.TYPE, RequestPlayersPacket.STREAM_CODEC, RequestPlayersPacket::toServer);
+
+        registrar.playToClient(ResponsePlayersPacket.TYPE, ResponsePlayersPacket.STREAM_CODEC, ResponsePlayersPacket::toClient);
     }
 }

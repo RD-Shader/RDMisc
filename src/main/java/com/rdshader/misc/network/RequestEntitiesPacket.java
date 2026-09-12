@@ -30,8 +30,7 @@ public class RequestEntitiesPacket implements CustomPacketPayload {
 
     private RequestEntitiesPacket() {}
 
-    @SuppressWarnings("unused")
-    public static void toServer(RequestEntitiesPacket packet, IPayloadContext iPayloadContext) {
+    public static void toServer(RequestEntitiesPacket ignoredPacket, IPayloadContext iPayloadContext) {
         ServerPlayer player = (ServerPlayer) iPayloadContext.player();
         ServerLevel level = player.level();
         List<EntityData> dataList = new ArrayList<>();
@@ -43,7 +42,7 @@ public class RequestEntitiesPacket implements CustomPacketPayload {
                 switch (entity) {
                     case ItemEntity itemEntity -> stack = itemEntity.getItem();
                     case FallingBlockEntity fallingBlockEntity -> stack = fallingBlockEntity.getBlockState().getBlock().asItem().getDefaultInstance();
-                    case Player player1 -> stack = Items.PLAYER_HEAD.getDefaultInstance();
+                    case Player ignored -> stack = Items.PLAYER_HEAD.getDefaultInstance();
                     default -> {}
                 }
 

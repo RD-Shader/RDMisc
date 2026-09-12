@@ -1,7 +1,10 @@
 package com.rdshader.misc;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
@@ -29,5 +32,11 @@ public class RDSMiscUtil {
 
     public static void genericBlockExplode(Level level, BlockPos pos) {
         genericBlockExplode(level, pos, 5.0F);
+    }
+
+    public static ItemStack namedStack(ItemStack stack, String name) {
+        ItemStack newStack = stack.copy();
+        newStack.set(DataComponents.CUSTOM_NAME, Component.literal(name));
+        return newStack;
     }
 }
